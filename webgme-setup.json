@@ -1,0 +1,13 @@
+{
+  "components": {
+    "plugins": {
+      "Exporter": {
+        "src": "src/plugins/Exporter",
+        "test": "test/plugins/Exporter"
+      }
+    }
+  },
+  "dependencies": {
+    "plugins": {}
+  }
+}
