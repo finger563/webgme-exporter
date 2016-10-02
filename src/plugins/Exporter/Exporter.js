@@ -11,14 +11,12 @@ define([
     'plugin/PluginConfig',
     'text!./metadata.json',
     'plugin/PluginBase',
-    'common/meta',
     'loader/modelLoader',
     'q'
 ], function (
     PluginConfig,
     pluginMetadata,
     PluginBase,
-    MetaTypes,
     modelLoader,
     Q) {
     'use strict';
@@ -35,7 +33,6 @@ define([
     var Exporter = function () {
         // Call base class' constructor.
         PluginBase.call(this);
-        this.metaTypes = MetaTypes;
         this.pluginMetadata = pluginMetadata;
     };
 
@@ -77,8 +74,6 @@ define([
     Exporter.prototype.main = function (callback) {
         var self = this;
         self.result.success = false;
-
-        self.updateMETA(self.metaTypes);
 
 	// What did the user select for our configuration?
 	var currentConfig = self.getCurrentConfig();

@@ -1,6 +1,6 @@
 {
-  "id": "Export",
-  "name": "Export",
+  "id": "Exporter",
+  "name": "Exporter",
   "version": "0.1.0",
   "description": "",
   "icon": {

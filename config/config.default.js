@@ -8,6 +8,8 @@ var config = require('./config.webgme'),
 // config.mongo.uri = 'mongodb://127.0.0.1:27017/webgme_my_app';
 
 config.requirejsPaths.loader = "./node_modules/webgme-to-json/"
+config.seedProjects.enable = true;
+config.seedProjects.basePaths = ["./src/seeds"]
 
 validateConfig(config);
 module.exports = config;
