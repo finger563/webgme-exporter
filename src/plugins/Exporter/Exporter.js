@@ -11,13 +11,13 @@ define([
     'plugin/PluginConfig',
     'text!./metadata.json',
     'plugin/PluginBase',
-    'loader/modelLoader',
+    'webgme-to-json/webgme-to-json',
     'q'
 ], function (
     PluginConfig,
     pluginMetadata,
     PluginBase,
-    modelLoader,
+    webgmeToJSON,
     Q) {
     'use strict';
 
@@ -81,9 +81,9 @@ define([
 
 	var nodeName = self.core.getAttribute(self.activeNode, 'name');
 	
-	modelLoader.notify = function(level, msg) {self.notify(level, msg);}
+	webgmeToJSON.notify = function(level, msg) {self.notify(level, msg);}
 
-	modelLoader.loadModel(self.core, self.activeNode)
+	webgmeToJSON.loadModel(self.core, self.activeNode)
 	    .then(function(model) {
 		return self.blobClient.putFile(nodeName+'.json', JSON.stringify(model.objects, null, 2));
 	    })
